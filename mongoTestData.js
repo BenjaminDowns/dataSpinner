@@ -12,9 +12,10 @@ MongoClient.connect("mongodb://localhost:27017/testing", function(err, db) {
 	// console.log(db)
   	var collection = db.collection('viewers')
   	var bulk = collection.initializeUnorderedBulkOp();
-	var advertisements = ["_id1", "_id2", "_id3", "_id4", "_id5"]
+	var advertisements = ["_id1", "_id2", "_id3", "_id4", "_id5", "_id6", "_id7", "_id8", "_id9", "_id10"]
 
 	function Viewer() {
+		var advertiser = advertiser[chance.integer({min: 0, })]
 		this.female = chance.bool();
 		this.start_date = chance.date({year: 2015})
 		this.age = chance.integer({min: 5, max: 95});
