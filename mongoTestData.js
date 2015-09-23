@@ -13,7 +13,6 @@ MongoClient.connect("mongodb://localhost:27017/testing", function(err, db) {
   	var collection = db.collection('viewers')
   	var bulk = collection.initializeUnorderedBulkOp();
 	var advertisements = ["_id1", "_id2", "_id3", "_id4", "_id5"]
-	var uniqueID = 0
 
 	function Viewer() {
 		this.female = chance.bool();
@@ -28,11 +27,10 @@ MongoClient.connect("mongodb://localhost:27017/testing", function(err, db) {
 		this.emotion.happy = chance.integer({min: 0, max: 100});
 		this.device_id = chance.integer({min: 1, max: 4});
 		this.advertisements = advertisements[chance.integer({min: 0, max: 9})]
-		uniqueID++
 	};
 
 
-	for (var i = 0; i < 10000; i++) {
+	for (var i = 0; i < 100000; i++) {
 		var nextViewer = new Viewer()
 		bulk.insert(nextViewer)
 	};
