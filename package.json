@@ -1,0 +1,14 @@
+{
+  "name": "data-generator",
+  "version": "0.0.1",
+  "description": "Generates random data for mongodb testing purposes.",
+  "main": "mongoTestData.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Benjamin Downs",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^0.7.7"
+  }
+}
